@@ -19,29 +19,9 @@ class App extends Component {
   nameId = nanoid();
   numberId = nanoid();
 
-  handleChange = e => {
-    const { name, value } = e.currentTarget;
-
-    this.setState({ [name]: value });
-  };
-
-  handleSubmit = e => {
-    const { name } = this.state;
-    e.preventDefault();
-
-    this.props.onSubmit(name);
-    this.reset();
-  };
-
   onSubmit = data => {
     console.log(data);
   };
-
-  reset() {
-    this.setState({
-      name: '',
-    });
-  }
 
   addContact = (name, number) => {
     const { contacts } = this.state;
